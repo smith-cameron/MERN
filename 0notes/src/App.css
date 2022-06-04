@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+.profile{
+  display: inline-block;
+  background-color: cornflowerblue;
+  color:darkolivegreen;
+  width: 325px;
+  height: 425px;
+  margin: 20px;
+  vertical-align: top;
+}
+.track{
+  display: inline-block;
+  background-color: saddlebrown;
+  width: 75px;
+  height: 75px;
+  margin: 10px;
+}
