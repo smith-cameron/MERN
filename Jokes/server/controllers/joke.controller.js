@@ -19,12 +19,11 @@ module.exports.getById = (req, res) => {
         });}
 
 module.exports.create = (req, res) => {
-    // console.log(res);
     Joke.create(req.body)
         .then(newlyCreatedObject => {
-            console.log("req.body",req.body);
+            // console.log("req.body",req.body);
             res.json({ joke: newlyCreatedObject })
-            console.log("object",newlyCreatedObject);
+            // console.log("object",newlyCreatedObject);
         })
         .catch((err) => {
             res.json({ message: 'Something went wrong', error: err })

@@ -42,7 +42,7 @@ app.get("/api/company/new", (request, response) => {
   response.json(createCompany());
 });
 
-app.get("/api/auser/company", (request, response) => {
+app.get("/api/user/company", (request, response) => {
   console.log("ucCombine route");
   const company = createCompany();
   const user = createUser();
