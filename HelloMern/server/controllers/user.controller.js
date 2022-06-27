@@ -23,6 +23,39 @@ module.exports = {
     })
   },
   getById : (req, res) => {
-    User.findOne()
+    User.findOne({_id: req.params.id})
+    .then((oneObject) => {
+      console.log(oneObject);
+      res.json(oneObject)
+    })
+    .catch((err) => {
+      console.log("Query *findOne* failed.")
+      res.status(400).json({ message: 'Something went wrong', error: err })
+    })
+  },
+  deleteById : (req, res) => {
+    User.deleteOne({_id: req.params.id})
+    .then((deletedObject) => {
+      console.log(deletedObject);
+      res.json(deletedObject)
+    })
+    .catch((err) => {
+      console.log("Query *deleteOne* failed.")
+      res.status(400).json({ message: 'Something went wrong', error: err })
+    })
+  },
+  updateById : (req, res) => {
+    User.updateOne({_id: req.params.id},
+      req.body,
+      {new: true, runValidators: true}
+      )
+    .then((updatedObject) => {
+      console.log(updatedObject);
+      res.json(updatedObject)
+    })
+    .catch((err) => {
+      console.log("Query *updateOne* failed.")
+      res.status(400).json({ message: 'Something went wrong', error: err })
+    })
   }
 }
