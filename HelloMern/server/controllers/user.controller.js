@@ -4,7 +4,7 @@ module.exports = {
   getAll : (req, res) => {
     User.find()
     .then((allObjects) => {
-      res.json({ users: allObjects })
+      res.json({ users: allObjects })//Possible root of issue in DisplayAll.js Line:14?
     })
     .catch((err) => {
       console.log("Query *getAll* failed.")
